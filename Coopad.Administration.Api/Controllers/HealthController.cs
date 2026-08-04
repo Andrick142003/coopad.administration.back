@@ -1,4 +1,4 @@
-﻿using Coopad.Administration.Api.Interfaces.Services;
+﻿using Coopad.Administration.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Coopad.Administration.Api.Controllers
