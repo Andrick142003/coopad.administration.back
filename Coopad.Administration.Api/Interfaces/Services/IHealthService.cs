@@ -1,7 +1,9 @@
-﻿namespace Coopad.Administration.Api.Interfaces.Services
+﻿using Coopad.Administration.Api.DTOs.Common;
+
+namespace Coopad.Administration.Api.Interfaces.Services
 {
     public interface IHealthService
     {
-        string GetSatus();
+        HealthResponse GetStatus();
     }
 }
