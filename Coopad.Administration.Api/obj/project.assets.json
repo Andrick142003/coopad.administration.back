@@ -681,23 +681,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\and\\.nuget\\packages\\": {},
+    "C:\\Users\\aquirolam\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Coopad.Administration.Api.csproj",
+      "projectUniqueName": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Coopad.Administration.Api.csproj",
       "projectName": "Coopad.Administration.Api",
-      "projectPath": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Coopad.Administration.Api.csproj",
-      "packagesPath": "C:\\Users\\and\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\obj\\",
+      "projectPath": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Coopad.Administration.Api.csproj",
+      "packagesPath": "C:\\Users\\aquirolam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\and\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aquirolam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -706,6 +706,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
