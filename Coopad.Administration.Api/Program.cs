@@ -1,4 +1,5 @@
 using Coopad.Administration.Api.Configuration;
+using Coopad.Administration.Api.Infrastructure.Database;
 using Coopad.Administration.Api.Repositories;
 using Coopad.Administration.Api.Repositories.Interfaces;
 using Coopad.Administration.Api.Services;
@@ -8,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<AseConnectionSettings>(
     builder.Configuration.GetSection("AseConnection"));
+
+
+builder.Services.AddSingleton<IAseConnectionFactory, AseConnectionFactory>();
 
 // Add services to the container.
 
