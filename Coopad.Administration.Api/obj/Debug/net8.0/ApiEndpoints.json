@@ -8,5 +8,15 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coopad.Administration.Api.Controllers.HealthController",
+    "Method": "Error",
+    "RelativePath": "api/Health/error",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

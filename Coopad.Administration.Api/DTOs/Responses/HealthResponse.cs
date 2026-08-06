@@ -1,4 +1,4 @@
-﻿namespace Coopad.Administration.Api.DTOs.Common
+﻿namespace Coopad.Administration.Api.DTOs.Responses
 {
     public class HealthResponse
     {

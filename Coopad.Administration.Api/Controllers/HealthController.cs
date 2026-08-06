@@ -11,15 +11,10 @@ namespace Coopad.Administration.Api.Controllers
     {
         private readonly IHealthService _healthService;
 
-
-
         public HealthController(IHealthService healthService) { 
         
         _healthService = healthService;
         }
-
-
-
 
         [HttpGet]
         public IActionResult Get()
@@ -27,6 +22,12 @@ namespace Coopad.Administration.Api.Controllers
             var response = _healthService.GetStatus();
 
             return Ok(response);
+        }
+
+        [HttpGet("error")]
+        public IActionResult Error()
+        {
+            throw new Exception("Prueba del GlobalExceptionMiddleware");
         }
     }
 }

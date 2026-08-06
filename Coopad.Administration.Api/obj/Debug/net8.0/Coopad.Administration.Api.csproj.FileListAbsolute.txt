@@ -72,3 +72,5 @@ C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administr
 C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administration.Api\obj\Debug\net8.0\ref\Coopad.Administration.Api.dll
 C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administration.Api\bin\Debug\net8.0\AdoNetCore.AseClient.dll
 C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administration.Api\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\and\Desktop\ProyectosWebCoopad\coopad.administration.back\Coopad.Administration.Api\bin\Debug\net8.0\AdoNetCore.AseClient.dll
+C:\Users\and\Desktop\ProyectosWebCoopad\coopad.administration.back\Coopad.Administration.Api\bin\Debug\net8.0\System.Security.Permissions.dll
