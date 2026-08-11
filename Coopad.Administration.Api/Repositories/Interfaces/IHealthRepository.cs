@@ -4,7 +4,7 @@ namespace Coopad.Administration.Api.Repositories.Interfaces
 {
     public interface IHealthRepository
     {
-        Health GetHealth();
+        Health? GetHealth();
 
     }
 }

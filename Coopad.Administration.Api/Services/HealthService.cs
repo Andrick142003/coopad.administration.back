@@ -16,9 +16,9 @@ namespace Coopad.Administration.Api.Services
             _healthRepository = healthRepository;
         }
 
-        public Health GetStatus()
+        public Health? GetStatus()
         {
-            Health databaseOnline = _healthRepository.GetHealth();
+            Health? databaseOnline = _healthRepository.GetHealth();
 
             return databaseOnline;
 

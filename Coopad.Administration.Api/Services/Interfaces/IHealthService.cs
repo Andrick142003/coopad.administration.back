@@ -5,6 +5,6 @@ namespace Coopad.Administration.Api.Services.Interfaces
 {
     public interface IHealthService
     {
-        Health GetStatus();
+        Health? GetStatus();
     }
 }
