@@ -18,6 +18,10 @@ namespace Coopad.Administration.Api.Repositories
             string username)
         {
             return await _context.Users
+                .Include(x => x.UserRoles)
+                    .ThenInclude(x => x.Role)
+                        .ThenInclude(x => x.RolePermissions)
+                            .ThenInclude(x => x.Permission)
                 .FirstOrDefaultAsync(x =>
                     x.Username == username);
         }
@@ -37,11 +41,11 @@ namespace Coopad.Administration.Api.Repositories
                     x.Username == username);
         }
 
+
+
         public async Task<User> CreateAsync(User user)
         {
             _context.Users.Add(user);
-
-            await _context.SaveChangesAsync();
 
             return user;
         }

@@ -5,12 +5,11 @@ namespace Coopad.Administration.Api.Data
 {
     public class SecurityDbContext : DbContext
     {
-
-
-        public SecurityDbContext(DbContextOptions<SecurityDbContext> options) : base(options)
+        public SecurityDbContext(
+            DbContextOptions<SecurityDbContext> options)
+            : base(options)
         {
         }
-
 
         public DbSet<User> Users => Set<User>();
 
@@ -22,49 +21,12 @@ namespace Coopad.Administration.Api.Data
 
         public DbSet<RolePermission> RolePermissions => Set<RolePermission>();
 
-
-
-
         protected override void OnModelCreating(
-         ModelBuilder modelBuilder)
+            ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<UserRole>()
-                .HasKey(x => new
-                {
-                    x.UserId,
-                    x.RoleId
-                });
 
-            modelBuilder.Entity<RolePermission>()
-                .HasKey(x => new
-                {
-                    x.RoleId,
-                    x.PermissionId
-                });
-
-
-
-            modelBuilder.Entity<UserRole>()
-            .HasOne(x => x.User)
-            .WithMany(x => x.UserRoles)
-               .HasForeignKey(x => x.UserId);
-
-            modelBuilder.Entity<UserRole>()
-                .HasOne(x => x.Role)
-                .WithMany(x => x.UserRoles)
-                .HasForeignKey(x => x.RoleId);
-
-            modelBuilder.Entity<RolePermission>()
-             .HasOne(x => x.Role)
-             .WithMany(x => x.RolePermissions)
-             .HasForeignKey(x => x.RoleId);
-
-            modelBuilder.Entity<RolePermission>()
-                .HasOne(x => x.Permission)
-                .WithMany(x => x.RolePermissions)
-                .HasForeignKey(x => x.PermissionId);
 
 
             modelBuilder.Entity<User>(entity =>
@@ -91,8 +53,9 @@ namespace Coopad.Administration.Api.Data
                     .HasDefaultValueSql("SYSDATETIME()");
 
                 entity.HasIndex(x => x.Username)
-                .IsUnique();
+                    .IsUnique();
             });
+
 
 
             modelBuilder.Entity<Role>(entity =>
@@ -118,9 +81,11 @@ namespace Coopad.Administration.Api.Data
                     .IsUnique();
 
                 entity.HasIndex(x => x.IsDefault)
-                     .HasFilter("[IsDefault] = 1")
-                     .IsUnique();
+                    .HasFilter("[IsDefault] = 1")
+                    .IsUnique();
             });
+
+
 
 
             modelBuilder.Entity<Permission>(entity =>
@@ -142,6 +107,9 @@ namespace Coopad.Administration.Api.Data
                 entity.HasIndex(x => x.Name)
                     .IsUnique();
             });
+
+
+
 
             modelBuilder.Entity<UserRole>(entity =>
             {
@@ -167,6 +135,7 @@ namespace Coopad.Administration.Api.Data
             });
 
 
+
             modelBuilder.Entity<RolePermission>(entity =>
             {
                 entity.ToTable("RolePermissions");
@@ -189,10 +158,6 @@ namespace Coopad.Administration.Api.Data
 
                 entity.HasIndex(x => x.PermissionId);
             });
-
-
         }
-
-
     }
 }

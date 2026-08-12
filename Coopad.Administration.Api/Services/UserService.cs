@@ -10,13 +10,16 @@ namespace Coopad.Administration.Api.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly SecurityDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
         public UserService(
             IUserRepository userRepository,
-            SecurityDbContext context)
+            SecurityDbContext context,
+            IUnitOfWork unitOfWork)
         {
             _userRepository = userRepository;
             _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<User?> GetByUsernameAsync(
@@ -41,8 +44,7 @@ namespace Coopad.Administration.Api.Services
             if (exists)
             {
                 throw new InvalidOperationException(
-                    "El usuario ya existe."
-                );
+                    "El usuario ya existe.");
             }
 
             var defaultRole = await _context.Roles
@@ -53,35 +55,33 @@ namespace Coopad.Administration.Api.Services
             if (defaultRole is null)
             {
                 throw new InvalidOperationException(
-                    "No existe un rol predeterminado activo."
-                );
+                    "No existe un rol predeterminado activo.");
             }
-
-            await using var transaction =
-                await _context.Database.BeginTransactionAsync();
 
             try
             {
+                await _unitOfWork.BeginTransactionAsync();
+
                 var createdUser =
                     await _userRepository.CreateAsync(user);
 
                 var userRole = new UserRole
                 {
-                    UserId = createdUser.Id,
+                    User = user,
                     RoleId = defaultRole.Id
                 };
 
                 _context.UserRoles.Add(userRole);
 
-                await _context.SaveChangesAsync();
+                await _unitOfWork.SaveChangesAsync();
 
-                await transaction.CommitAsync();
+                await _unitOfWork.CommitTransactionAsync();
 
                 return createdUser;
             }
             catch
             {
-                await transaction.RollbackAsync();
+                await _unitOfWork.RollbackTransactionAsync();
 
                 throw;
             }
