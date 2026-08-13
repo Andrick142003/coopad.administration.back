@@ -1,58 +1,62 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\",
+  "WorkspaceRootPath": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\controllers\\healthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\controllers\\healthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\data\\securitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\data\\securitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\dtos\\responses\\userdetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\dtos\\responses\\userdetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\dtos\\requests\\createuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\dtos\\requests\\createuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\middlewares\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\middlewares\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\services\\healthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\aquirolam\\desktop\\desarrollosweb\\coopad.administration\\coopad.administration.api\\services\\healthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\services\\healthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|c:\\users\\and\\desktop\\proyectoswebcoopad\\coopad.administration.back\\coopad.administration.api\\repositories\\interfaces\\ihealthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01480216-3CAD-41E9-8AE6-177FE6BF6380}|Coopad.Administration.Api\\Coopad.Administration.Api.csproj|solutionrelative:coopad.administration.api\\repositories\\interfaces\\ihealthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,108 +66,138 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HealthController.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Controllers\\HealthController.cs",
-              "RelativeDocumentMoniker": "Coopad.Administration.Api\\Controllers\\HealthController.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Controllers\\HealthController.cs",
-              "RelativeToolTip": "Coopad.Administration.Api\\Controllers\\HealthController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-12T02:19:16.76Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SecurityDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Data\\SecurityDbContext.cs",
-              "RelativeDocumentMoniker": "Coopad.Administration.Api\\Data\\SecurityDbContext.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Data\\SecurityDbContext.cs",
-              "RelativeToolTip": "Coopad.Administration.Api\\Data\\SecurityDbContext.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAuwBMAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-12T00:38:18.807Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Repositories\\UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Repositories\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Coopad.Administration.Api\\Repositories\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Repositories\\UnitOfWork.cs",
               "RelativeToolTip": "Coopad.Administration.Api\\Repositories\\UnitOfWork.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBkAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAADwvyEAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-11T23:58:21.492Z",
+              "WhenOpened": "2026-08-13T01:50:37.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Coopad.Administration.Api\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Coopad.Administration.Api\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T15:34:27.966Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "Coopad.Administration.Api\\appsettings.json",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\appsettings.json",
-              "RelativeToolTip": "Coopad.Administration.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-08-11T02:53:25.304Z",
+              "Title": "UserDetailsDto.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\DTOs\\Responses\\UserDetailsDto.cs",
+              "RelativeDocumentMoniker": "Coopad.Administration.Api\\DTOs\\Responses\\UserDetailsDto.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\DTOs\\Responses\\UserDetailsDto.cs",
+              "RelativeToolTip": "Coopad.Administration.Api\\DTOs\\Responses\\UserDetailsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T15:21:53.21Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Services\\UserService.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Coopad.Administration.Api\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Services\\UserService.cs",
               "RelativeToolTip": "Coopad.Administration.Api\\Services\\UserService.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwDMAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAIwD4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-11T02:36:53.997Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Repositories\\UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Coopad.Administration.Api\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "Coopad.Administration.Api\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBcAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAvwDUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-11T02:21:37.685Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Models\\Role.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Models\\Role.cs",
               "RelativeDocumentMoniker": "Coopad.Administration.Api\\Models\\Role.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Models\\Role.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Models\\Role.cs",
               "RelativeToolTip": "Coopad.Administration.Api\\Models\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-12T00:17:03.973Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Coopad.Administration.Api\\Repositories\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Coopad.Administration.Api\\Repositories\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-11T00:41:00.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateUserRequest.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\DTOs\\Requests\\CreateUserRequest.cs",
+              "RelativeDocumentMoniker": "Coopad.Administration.Api\\DTOs\\Requests\\CreateUserRequest.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\DTOs\\Requests\\CreateUserRequest.cs",
+              "RelativeToolTip": "Coopad.Administration.Api\\DTOs\\Requests\\CreateUserRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T01:44:39.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Coopad.Administration.Api\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Models\\User.cs",
+              "RelativeToolTip": "Coopad.Administration.Api\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T02:13:38.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Program.cs",
               "RelativeDocumentMoniker": "Coopad.Administration.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Program.cs",
               "RelativeToolTip": "Coopad.Administration.Api\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAIwBkAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-11T02:53:21.103Z",
               "EditorCaption": ""
@@ -171,10 +205,36 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Coopad.Administration.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\appsettings.json",
+              "RelativeToolTip": "Coopad.Administration.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-08-12T15:41:49.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GlobalExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "Coopad.Administration.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "RelativeToolTip": "Coopad.Administration.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T17:25:43.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Repositories\\Interfaces\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "Coopad.Administration.Api\\Repositories\\Interfaces\\IUnitOfWork.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Repositories\\Interfaces\\IUnitOfWork.cs",
               "RelativeToolTip": "Coopad.Administration.Api\\Repositories\\Interfaces\\IUnitOfWork.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -183,50 +243,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "Coopad.Administration.Api\\Repositories\\Interfaces\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeToolTip": "Coopad.Administration.Api\\Repositories\\Interfaces\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-11T00:41:00.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Services\\Interfaces\\IUserService.cs",
-              "RelativeDocumentMoniker": "Coopad.Administration.Api\\Services\\Interfaces\\IUserService.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Services\\Interfaces\\IUserService.cs",
-              "RelativeToolTip": "Coopad.Administration.Api\\Services\\Interfaces\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-11T23:47:26.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IHealthRepository.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Repositories\\Interfaces\\IHealthRepository.cs",
-              "RelativeDocumentMoniker": "Coopad.Administration.Api\\Repositories\\Interfaces\\IHealthRepository.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Repositories\\Interfaces\\IHealthRepository.cs",
-              "RelativeToolTip": "Coopad.Administration.Api\\Repositories\\Interfaces\\IHealthRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-11T00:41:13.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "HealthService.cs",
-              "DocumentMoniker": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Services\\HealthService.cs",
+              "DocumentMoniker": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Services\\HealthService.cs",
               "RelativeDocumentMoniker": "Coopad.Administration.Api\\Services\\HealthService.cs",
-              "ToolTip": "C:\\Users\\and\\Desktop\\ProyectosWebCoopad\\coopad.administration.back\\Coopad.Administration.Api\\Services\\HealthService.cs",
+              "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Services\\HealthService.cs",
               "RelativeToolTip": "Coopad.Administration.Api\\Services\\HealthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

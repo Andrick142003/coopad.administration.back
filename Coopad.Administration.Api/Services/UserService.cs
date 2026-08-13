@@ -1,4 +1,5 @@
 ﻿using Coopad.Administration.Api.Data;
+using Coopad.Administration.Api.DTOs.Responses;
 using Coopad.Administration.Api.Models;
 using Coopad.Administration.Api.Repositories.Interfaces;
 using Coopad.Administration.Api.Services.Interfaces;
@@ -36,7 +37,7 @@ namespace Coopad.Administration.Api.Services
                 .ExistsAsync(username);
         }
 
-        public async Task<User> CreateUserAsync(User user)
+        public async Task<UserDetailsDto> CreateUserAsync(User user)
         {
             var exists = await _userRepository
                 .ExistsAsync(user.Username);
@@ -67,7 +68,7 @@ namespace Coopad.Administration.Api.Services
 
                 var userRole = new UserRole
                 {
-                    User = user,
+                    User = createdUser,
                     RoleId = defaultRole.Id
                 };
 
@@ -76,8 +77,6 @@ namespace Coopad.Administration.Api.Services
                 await _unitOfWork.SaveChangesAsync();
 
                 await _unitOfWork.CommitTransactionAsync();
-
-                return createdUser;
             }
             catch
             {
@@ -85,6 +84,38 @@ namespace Coopad.Administration.Api.Services
 
                 throw;
             }
+
+            var userWithRelations =
+                await _userRepository
+                    .GetByUsernameAsync(user.Username);
+
+            if (userWithRelations is null)
+            {
+                throw new InvalidOperationException(
+                    "No fue posible recuperar el usuario creado.");
+            }
+
+            return new UserDetailsDto
+            {
+                Id = userWithRelations.Id,
+                Username = userWithRelations.Username,
+                DisplayName = userWithRelations.DisplayName,
+                Email = userWithRelations.Email,
+
+                Roles = userWithRelations.UserRoles
+                    .Where(x => x.Role.IsActive)
+                    .Select(x => x.Role.Name)
+                    .Distinct()
+                    .ToList(),
+
+                Permissions = userWithRelations.UserRoles
+                    .Where(x => x.Role.IsActive)
+                    .SelectMany(x => x.Role.RolePermissions)
+                    .Where(x => x.Permission.IsActive)
+                    .Select(x => x.Permission.Name)
+                    .Distinct()
+                    .ToList()
+            };
         }
     }
 }

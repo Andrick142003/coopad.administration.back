@@ -1,4 +1,5 @@
 ﻿using Coopad.Administration.Api.Data;
+using Coopad.Administration.Api.DTOs.Responses;
 using Coopad.Administration.Api.Models;
 using Coopad.Administration.Api.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
