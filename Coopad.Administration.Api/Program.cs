@@ -14,6 +14,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<AseConnectionSettings>(
     builder.Configuration.GetSection("AseConnection"));
 
+builder.Services.Configure<ActiveDirectorySettings>(
+    builder.Configuration.GetSection("ActiveDirectory"));
+
 
 builder.Services.AddSingleton<IAseConnectionFactory, AseConnectionFactory>();
 
