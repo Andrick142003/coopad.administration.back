@@ -67,9 +67,9 @@ namespace Coopad.Administration.Api.Controllers
                     Success = true,
                     Message = "Usuario creado correctamente.",
                     Data = createdUser
-            });
+                }
+            );
         }
-
 
 
     }

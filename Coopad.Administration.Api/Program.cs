@@ -1,5 +1,6 @@
 using Coopad.Administration.Api.Configuration;
 using Coopad.Administration.Api.Data;
+using Coopad.Administration.Api.Infrastructure.ActiveDirectory;
 using Coopad.Administration.Api.Infrastructure.Database;
 using Coopad.Administration.Api.Middlewares;
 using Coopad.Administration.Api.Repositories;
@@ -28,6 +29,7 @@ builder.Services.AddScoped<IHealthRepository, HealthRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IActiveDirectoryService, ActiveDirectoryService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

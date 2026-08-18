@@ -44,11 +44,11 @@ namespace Coopad.Administration.Api.Repositories
 
 
 
-        public async Task<User> CreateAsync(User user)
+        public Task<User> CreateAsync(User user)
         {
             _context.Users.Add(user);
 
-            return user;
+            return Task.FromResult(user);
         }
 
     }
