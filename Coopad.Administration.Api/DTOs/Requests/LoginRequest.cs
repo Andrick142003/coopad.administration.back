@@ -1,19 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
 namespace Coopad.Administration.Api.DTOs.Requests
 {
-    public class CreateUserRequest
+    public class LoginRequest
     {
         [Required]
         [MaxLength(100)]
         public string Username { get; set; } = null!;
 
         [Required]
-        [MaxLength(200)]
-        public string DisplayName { get; set; } = null!;
+        public string Password { get; set; } = null!;
 
-        [EmailAddress]
-        [MaxLength(200)]
-        public string? Email { get; set; }
     }
 }
