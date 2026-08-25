@@ -29,29 +29,25 @@ namespace Coopad.Administration.Api.Infrastructure.ActiveDirectory
                     "La contraseña es obligatoria.",
                     nameof(password));
 
-            var userPrincipalName =
-                $"{username}@{_settings.Domain}";
-
             var identifier = new LdapDirectoryIdentifier(
                 _settings.Server,
                 _settings.Port,
-                fullyQualifiedDnsHostName: true,
-                connectionless: false);
+                true,
+                false);
 
             using var connection =
                 new LdapConnection(identifier);
 
             connection.SessionOptions.ProtocolVersion = 3;
+
             connection.SessionOptions.SecureSocketLayer =
                 _settings.UseSsl;
 
             connection.AuthType = AuthType.Basic;
 
-            var credential = new NetworkCredential(
-                userPrincipalName,
+            connection.Credential = new NetworkCredential(
+                $"{username}@{_settings.Domain}",
                 password);
-
-            connection.Credential = credential;
 
             try
             {
@@ -64,5 +60,102 @@ namespace Coopad.Administration.Api.Infrastructure.ActiveDirectory
                 return Task.FromResult(false);
             }
         }
+
+
+        public Task<ActiveDirectoryUser?>GetUserAsync(
+    string username,
+    string password)
+        {
+            var identifier = new LdapDirectoryIdentifier(
+                _settings.Server,
+                _settings.Port,
+                true,
+                false);
+
+            using var connection =
+                new LdapConnection(identifier);
+
+            connection.SessionOptions.ProtocolVersion = 3;
+
+            connection.SessionOptions.SecureSocketLayer =
+                _settings.UseSsl;
+
+            connection.AuthType = AuthType.Basic;
+
+            connection.Credential = new NetworkCredential(
+                $"{username}@{_settings.Domain}",
+                password);
+
+            try
+            {
+                connection.Bind();
+
+
+                var searchRequest = new SearchRequest(
+                    null,
+                    $"(&(objectClass=user)(sAMAccountName={username}))",
+                    SearchScope.Subtree,
+                    "sAMAccountName",
+                    "displayName",
+                    "mail");
+
+                var response =
+                    (SearchResponse)connection.SendRequest(
+                        searchRequest);
+
+                if (response.Entries.Count == 0)
+                {
+                    return Task.FromResult<ActiveDirectoryUser?>(
+                        null);
+                }
+
+                var entry = response.Entries[0];
+
+                var user = new ActiveDirectoryUser
+                {
+                    Username =
+                        GetAttribute(
+                            entry,
+                            "sAMAccountName")
+                        ?? username,
+
+                    DisplayName =
+                        GetAttribute(
+                            entry,
+                            "displayName"),
+
+                    Email =
+                        GetAttribute(
+                            entry,
+                            "mail")
+                };
+
+                return Task.FromResult<ActiveDirectoryUser?>(
+                    user);
+            }
+            catch (LdapException)
+            {
+                return Task.FromResult<ActiveDirectoryUser?>(
+                    null);
+            }
+        }
+
+        private static string? GetAttribute(
+         SearchResultEntry entry,
+             string attributeName)
+        {
+            if (!entry.Attributes.Contains(attributeName))
+                return null;
+
+            var attribute =
+                entry.Attributes[attributeName];
+
+            if (attribute.Count == 0)
+                return null;
+
+            return attribute[0]?.ToString();
+        }
+
+    
     }
 }

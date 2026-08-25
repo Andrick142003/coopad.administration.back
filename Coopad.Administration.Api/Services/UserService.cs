@@ -1,5 +1,6 @@
 ﻿using Coopad.Administration.Api.Data;
 using Coopad.Administration.Api.DTOs.Responses;
+using Coopad.Administration.Api.Infrastructure.ActiveDirectory;
 using Coopad.Administration.Api.Models;
 using Coopad.Administration.Api.Repositories.Interfaces;
 using Coopad.Administration.Api.Services.Interfaces;
@@ -12,15 +13,18 @@ namespace Coopad.Administration.Api.Services
         private readonly IUserRepository _userRepository;
         private readonly SecurityDbContext _context;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IActiveDirectoryService _activeDirectoryService;
 
         public UserService(
             IUserRepository userRepository,
             SecurityDbContext context,
-            IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork,
+            IActiveDirectoryService activeDirectoryService)
         {
             _userRepository = userRepository;
             _context = context;
             _unitOfWork = unitOfWork;
+            _activeDirectoryService = activeDirectoryService;
         }
 
         public async Task<User?> GetByUsernameAsync(
@@ -37,7 +41,7 @@ namespace Coopad.Administration.Api.Services
                 .ExistsAsync(username);
         }
 
-        public async Task<UserDetailsDto> CreateUserAsync(User user)
+        public async Task<User> CreateUserAsync(User user)
         {
             var exists = await _userRepository
                 .ExistsAsync(user.Username);
@@ -68,7 +72,7 @@ namespace Coopad.Administration.Api.Services
 
                 var userRole = new UserRole
                 {
-                    User = createdUser,
+                    User = user,
                     RoleId = defaultRole.Id
                 };
 
@@ -77,6 +81,8 @@ namespace Coopad.Administration.Api.Services
                 await _unitOfWork.SaveChangesAsync();
 
                 await _unitOfWork.CommitTransactionAsync();
+
+                return createdUser;
             }
             catch
             {
@@ -84,31 +90,89 @@ namespace Coopad.Administration.Api.Services
 
                 throw;
             }
+        }
 
-            var userWithRelations =
-                await _userRepository
-                    .GetByUsernameAsync(user.Username);
+        public async Task<LoginResponse?> LoginAsync(
+            string username,
+            string password)
+        {
 
-            if (userWithRelations is null)
+            var validCredentials =
+            await _activeDirectoryService
+             .ValidateCredentialsAsync(
+            username,
+            password);
+
+            if (!validCredentials)
             {
-                throw new InvalidOperationException(
-                    "No fue posible recuperar el usuario creado.");
+                return null;
             }
 
-            return new UserDetailsDto
-            {
-                Id = userWithRelations.Id,
-                Username = userWithRelations.Username,
-                DisplayName = userWithRelations.DisplayName,
-                Email = userWithRelations.Email,
 
-                Roles = userWithRelations.UserRoles
+            var activeDirectoryUser =
+            await _activeDirectoryService
+            .GetUserAsync(
+            username,
+            password);
+
+            if (activeDirectoryUser is null)
+            {
+                return null;
+            }
+
+
+
+            var user = await _userRepository
+                .GetByUsernameAsync(username);
+
+
+            if (user is null)
+            {
+                user = new User
+                {
+                    Username = activeDirectoryUser.Username,
+
+                    DisplayName =
+                    activeDirectoryUser.DisplayName
+                    ?? activeDirectoryUser.Username,
+
+                    Email = activeDirectoryUser.Email,
+
+                    IsActive = true
+                };
+
+                user = await CreateUserAsync(user);
+
+                user = await _userRepository
+                    .GetByUsernameAsync(username);
+            }
+
+            if (user is null)
+            {
+                throw new InvalidOperationException(
+                    "No fue posible obtener el usuario.");
+            }
+
+            if (!user.IsActive)
+            {
+                throw new InvalidOperationException(
+                    "El usuario se encuentra inactivo.");
+            }
+
+
+            return new LoginResponse
+            {
+                UserId = user.Id,
+                Username = user.Username,
+                DisplayName = user.DisplayName,
+
+                Roles = user.UserRoles
                     .Where(x => x.Role.IsActive)
                     .Select(x => x.Role.Name)
                     .Distinct()
                     .ToList(),
 
-                Permissions = userWithRelations.UserRoles
+                Permissions = user.UserRoles
                     .Where(x => x.Role.IsActive)
                     .SelectMany(x => x.Role.RolePermissions)
                     .Where(x => x.Permission.IsActive)
