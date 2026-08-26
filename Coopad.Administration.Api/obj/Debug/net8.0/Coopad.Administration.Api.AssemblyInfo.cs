@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Coopad.Administration.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+feee4369bb4581a5db47477d394c29ef5b9bb576")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f31a4913ba4200eb966296bcc075a8844698f1b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Coopad.Administration.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Coopad.Administration.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

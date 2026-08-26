@@ -106,8 +106,7 @@
               "RelativeToolTip": "Coopad.Administration.Api\\Configuration\\ActiveDirectorySettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T00:50:24.502Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T00:50:24.502Z"
             },
             {
               "$type": "Document",
@@ -117,7 +116,7 @@
               "RelativeDocumentMoniker": "Coopad.Administration.Api\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Services\\UserService.cs",
               "RelativeToolTip": "Coopad.Administration.Api\\Services\\UserService.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAMwJIAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAewKIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-11T02:36:53.997Z",
               "EditorCaption": ""
@@ -144,8 +143,7 @@
               "RelativeToolTip": "Coopad.Administration.Api\\Infrastructure\\ActiveDirectory\\IActiveDirectoryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-13T13:50:23.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-13T13:50:23.823Z"
             },
             {
               "$type": "Document",
@@ -155,7 +153,7 @@
               "RelativeDocumentMoniker": "Coopad.Administration.Api\\Infrastructure\\ActiveDirectory\\ActiveDirectoryService.cs",
               "ToolTip": "C:\\Users\\aquirolam\\Desktop\\DesarrollosWeb\\Coopad.Administration\\Coopad.Administration.Api\\Infrastructure\\ActiveDirectory\\ActiveDirectoryService.cs",
               "RelativeToolTip": "Coopad.Administration.Api\\Infrastructure\\ActiveDirectory\\ActiveDirectoryService.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwEAAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAFQAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-13T13:50:52.863Z",
               "EditorCaption": ""
@@ -182,8 +180,7 @@
               "RelativeToolTip": "Coopad.Administration.Api\\Controllers\\AuthController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwB8AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T13:56:56.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T13:56:56.61Z"
             },
             {
               "$type": "Document",
@@ -195,8 +192,7 @@
               "RelativeToolTip": "Coopad.Administration.Api\\Infrastructure\\ActiveDirectory\\ActiveDirectoryUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T14:35:48.144Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T14:35:48.144Z"
             },
             {
               "$type": "Document",

@@ -92,7 +92,7 @@ namespace Coopad.Administration.Api.Infrastructure.ActiveDirectory
 
 
                 var searchRequest = new SearchRequest(
-                    null,
+                    "DC=coopad,DC=fin,DC=ec",
                     $"(&(objectClass=user)(sAMAccountName={username}))",
                     SearchScope.Subtree,
                     "sAMAccountName",
