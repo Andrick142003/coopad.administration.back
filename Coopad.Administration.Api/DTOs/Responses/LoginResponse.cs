@@ -2,14 +2,8 @@
 {
     public class LoginResponse
     {
-        public int UserId { get; set; }
+        public string Token { get; set; } = null!;
 
-        public string Username { get; set; } = null!;
-
-        public string DisplayName { get; set; } = null!;
-
-        public List<string> Roles { get; set; } = [];
-
-        public List<string> Permissions { get; set; } = [];
+        public UserDetailsDto User { get; set; } = null!;
     }
 }

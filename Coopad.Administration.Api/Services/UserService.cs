@@ -14,17 +14,20 @@ namespace Coopad.Administration.Api.Services
         private readonly SecurityDbContext _context;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IActiveDirectoryService _activeDirectoryService;
+        private readonly IJwtService _jwtService;
 
         public UserService(
             IUserRepository userRepository,
             SecurityDbContext context,
             IUnitOfWork unitOfWork,
-            IActiveDirectoryService activeDirectoryService)
+            IActiveDirectoryService activeDirectoryService,
+            IJwtService jwtService)
         {
             _userRepository = userRepository;
             _context = context;
             _unitOfWork = unitOfWork;
             _activeDirectoryService = activeDirectoryService;
+            _jwtService = jwtService;
         }
 
         public async Task<User?> GetByUsernameAsync(
@@ -160,25 +163,33 @@ namespace Coopad.Administration.Api.Services
             }
 
 
+            var token = _jwtService.GenerateToken(user);
+
             return new LoginResponse
             {
-                UserId = user.Id,
-                Username = user.Username,
-                DisplayName = user.DisplayName,
+                Token = token,
 
-                Roles = user.UserRoles
-                    .Where(x => x.Role.IsActive)
-                    .Select(x => x.Role.Name)
-                    .Distinct()
-                    .ToList(),
+                User = new UserDetailsDto
+                {
+                    Id = user.Id,
+                    Username = user.Username,
+                    DisplayName = user.DisplayName,
+                    Email = user.Email,
 
-                Permissions = user.UserRoles
-                    .Where(x => x.Role.IsActive)
-                    .SelectMany(x => x.Role.RolePermissions)
-                    .Where(x => x.Permission.IsActive)
-                    .Select(x => x.Permission.Name)
-                    .Distinct()
-                    .ToList()
+                    Roles = user.UserRoles
+                        .Where(x => x.Role.IsActive)
+                        .Select(x => x.Role.Name)
+                        .Distinct()
+                        .ToList(),
+
+                    Permissions = user.UserRoles
+                        .Where(x => x.Role.IsActive)
+                        .SelectMany(x => x.Role.RolePermissions)
+                        .Where(x => x.Permission.IsActive)
+                        .Select(x => x.Permission.Name)
+                        .Distinct()
+                        .ToList()
+                }
             };
         }
     }

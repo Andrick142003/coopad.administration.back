@@ -1,6 +1,7 @@
 ﻿using Coopad.Administration.Api.DTOs.Requests;
 using Coopad.Administration.Api.Models;
 using Coopad.Administration.Api.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Coopad.Administration.Api.Controllers
@@ -69,6 +70,23 @@ namespace Coopad.Administration.Api.Controllers
                     Data = createdUser
                 }
             );
+        }
+
+
+        [Authorize]
+        [HttpGet("me")]
+        public IActionResult GetCurrentUser()
+        {
+            return Ok(new
+            {
+                Success = true,
+                User = User.Identity?.Name,
+                Claims = User.Claims.Select(x => new
+                {
+                    x.Type,
+                    x.Value
+                })
+            });
         }
 
 
