@@ -1,4 +1,5 @@
-﻿using Coopad.Administration.Api.DTOs.Requests;
+﻿using Coopad.Administration.Api.Authorization;
+using Coopad.Administration.Api.DTOs.Requests;
 using Coopad.Administration.Api.Models;
 using Coopad.Administration.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -18,6 +19,7 @@ namespace Coopad.Administration.Api.Controllers
             _userService = userService;
         }
 
+        
         [HttpGet("{username}")]
         public async Task<IActionResult> GetByUsername(
             string username)
@@ -73,7 +75,7 @@ namespace Coopad.Administration.Api.Controllers
         }
 
 
-        [Authorize]
+        [HasPermission("Users.View")]
         [HttpGet("me")]
         public IActionResult GetCurrentUser()
         {

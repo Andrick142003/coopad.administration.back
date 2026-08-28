@@ -1,3 +1,4 @@
+using Coopad.Administration.Api.Authorization;
 using Coopad.Administration.Api.Configuration;
 using Coopad.Administration.Api.Data;
 using Coopad.Administration.Api.Infrastructure.ActiveDirectory;
@@ -8,6 +9,7 @@ using Coopad.Administration.Api.Repositories.Interfaces;
 using Coopad.Administration.Api.Services;
 using Coopad.Administration.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -39,6 +41,8 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IActiveDirectoryService, ActiveDirectoryService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
+builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
