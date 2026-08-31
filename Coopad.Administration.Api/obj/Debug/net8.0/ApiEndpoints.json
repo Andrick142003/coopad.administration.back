@@ -16,6 +16,136 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Coopad.Administration.Api.Controllers.CashFlowProjectionController",
+    "Method": "Create",
+    "RelativePath": "api/CashFlowProjection",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Coopad.Administration.Api.DTOs.Requests.CreateCashFlowProjectionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Coopad.Administration.Api.DTOs.Responses.CashFlowProjectionResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Coopad.Administration.Api.Controllers.CashFlowProjectionController",
+    "Method": "getCashflow",
+    "RelativePath": "api/CashFlowProjection",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "semana",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tipo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coopad.Administration.Api.Controllers.CashFlowProjectionController",
+    "Method": "GetById",
+    "RelativePath": "api/CashFlowProjection/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Coopad.Administration.Api.DTOs.Responses.CashFlowProjectionResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Coopad.Administration.Api.Controllers.CashFlowProjectionController",
+    "Method": "Update",
+    "RelativePath": "api/CashFlowProjection/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Coopad.Administration.Api.DTOs.Requests.UpdateCashFlowProjectionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Coopad.Administration.Api.DTOs.Responses.CashFlowProjectionResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Coopad.Administration.Api.Controllers.CashFlowProjectionController",
+    "Method": "Delete",
+    "RelativePath": "api/CashFlowProjection/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Coopad.Administration.Api.Controllers.HealthController",
     "Method": "Get",
     "RelativePath": "api/Health",

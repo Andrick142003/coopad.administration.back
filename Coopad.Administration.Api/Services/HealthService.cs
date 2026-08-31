@@ -1,8 +1,7 @@
-﻿using Coopad.Administration.Api.DTOs.Common;
+﻿
 using Coopad.Administration.Api.Models;
 using Coopad.Administration.Api.Repositories.Interfaces;
 using Coopad.Administration.Api.Services.Interfaces;
-using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace Coopad.Administration.Api.Services
 {

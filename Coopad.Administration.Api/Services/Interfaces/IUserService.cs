@@ -17,5 +17,6 @@ namespace Coopad.Administration.Api.Services.Interfaces
             string password);
 
 
+
     }
 }

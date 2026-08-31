@@ -21,6 +21,8 @@ namespace Coopad.Administration.Api.Data
 
         public DbSet<RolePermission> RolePermissions => Set<RolePermission>();
 
+        public DbSet<CashFlowProjection> CashFlowProjections => Set<CashFlowProjection>();
+
         protected override void OnModelCreating(
             ModelBuilder modelBuilder)
         {
@@ -158,6 +160,56 @@ namespace Coopad.Administration.Api.Data
 
                 entity.HasIndex(x => x.PermissionId);
             });
+
+
+            modelBuilder.Entity<CashFlowProjection>(entity =>
+            {
+                entity.ToTable("CashFlowProjections");
+
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Id)
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(x => x.Anio)
+                    .IsRequired();
+
+                entity.Property(x => x.Mes)
+                    .IsRequired();
+
+                entity.Property(x => x.FechaInicio)
+                    .HasColumnType("date")
+                    .IsRequired();
+
+                entity.Property(x => x.FechaFin)
+                    .HasColumnType("date")
+                    .IsRequired();
+
+                entity.Property(x => x.Semana)
+                    .IsRequired();
+
+                entity.Property(x => x.TipoSaldo)
+                    .HasMaxLength(50)
+                    .IsRequired();
+
+                entity.Property(x => x.Tipo)
+                    .HasMaxLength(20)
+                    .IsRequired();
+
+                entity.Property(x => x.Proyeccion)
+                    .HasColumnType("decimal(18,2)")
+                    .IsRequired();
+
+                entity.Property(x => x.CreatedAt)
+                    .HasDefaultValueSql("SYSDATETIME()")
+                    .IsRequired();
+
+                entity.Property(x => x.UpdatedAt);
+            });
+
+
+
+
         }
     }
 }
