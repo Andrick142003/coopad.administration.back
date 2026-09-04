@@ -146,6 +146,79 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Coopad.Administration.Api.Controllers.CashFlowProjectionController",
+    "Method": "Create",
+    "RelativePath": "api/CashFlowProjection/createDates",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[Coopad.Administration.Api.DTOs.Requests.CreateCashFlowDateRequest, Coopad.Administration.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coopad.Administration.Api.Controllers.CashFlowProjectionController",
+    "Method": "Get",
+    "RelativePath": "api/CashFlowProjection/ListCashFlowRegister",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "semana",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tipoSaldo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tipo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coopad.Administration.Api.Controllers.CashFlowProjectionController",
+    "Method": "GetDates",
+    "RelativePath": "api/CashFlowProjection/ListFechas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Coopad.Administration.Api.Controllers.HealthController",
     "Method": "Get",
     "RelativePath": "api/Health",

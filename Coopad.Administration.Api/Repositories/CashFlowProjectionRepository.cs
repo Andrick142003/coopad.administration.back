@@ -1,5 +1,6 @@
 ﻿using AdoNetCore.AseClient;
 using Coopad.Administration.Api.Data;
+using Coopad.Administration.Api.DTOs.Requests;
 using Coopad.Administration.Api.DTOs.Responses;
 using Coopad.Administration.Api.Infrastructure.Database;
 using Coopad.Administration.Api.Models;
@@ -21,6 +22,9 @@ namespace Coopad.Administration.Api.Repositories
             _connectionFactory = connectionFactory;
         }
 
+
+
+
         public async Task<List<CashFlowProjection>> GetAllAsync(
             int anio,
             int mes,
@@ -35,8 +39,8 @@ namespace Coopad.Administration.Api.Repositories
                     x.Mes == mes &&
                     x.Semana == semana &&
                     x.Tipo == tipo)
-                .OrderBy(x => x.FechaInicio)
-                .ThenBy(x => x.Semana)
+                
+                .OrderBy(x => x.Semana)
                 .ThenBy(x => x.Tipo)
                 .ToListAsync(cancellationToken);
         }
@@ -66,36 +70,16 @@ namespace Coopad.Administration.Api.Repositories
             return projection;
         }
 
-
-        public async Task<CashFlowProjection?> UpdateAsync(
+        public async Task<CashFlowProjection> UpdateAsync(
             CashFlowProjection projection,
             CancellationToken cancellationToken = default)
         {
-            var existing = await _context.CashFlowProjections
-                .FirstOrDefaultAsync(
-                    x => x.Id == projection.Id,
-                    cancellationToken);
-
-            if (existing is null)
-            {
-                return null;
-            }
-
-            existing.Anio = projection.Anio;
-            existing.Mes = projection.Mes;
-            existing.FechaInicio = projection.FechaInicio;
-            existing.FechaFin = projection.FechaFin;
-            existing.Semana = projection.Semana;
-            existing.TipoSaldo = projection.TipoSaldo;
-            existing.Tipo = projection.Tipo;
-            existing.Proyeccion = projection.Proyeccion;
-            existing.UpdatedAt = DateTime.Now;
+            _context.CashFlowProjections.Update(projection);
 
             await _context.SaveChangesAsync(cancellationToken);
 
-            return existing;
+            return projection;
         }
-
 
 
         public async Task<bool> DeleteAsync(
@@ -120,24 +104,19 @@ namespace Coopad.Administration.Api.Repositories
         }
 
 
-        public async Task<bool> ExistsAsync(
-            int anio,
-            int mes,
-            DateTime fechaInicio,
-            DateTime fechaFin,
-            int semana,
-            string tipoSaldo,
-            string tipo,
-            CancellationToken cancellationToken = default)
+        public async Task<CashFlowProjection?> GetByParametersAsync(
+        int anio,
+        int mes,
+        int semana,
+        string tipoSaldo,
+        string tipo,
+        CancellationToken cancellationToken = default)
         {
             return await _context.CashFlowProjections
-                .AsNoTracking()
-                .AnyAsync(
+                .FirstOrDefaultAsync(
                     x =>
                         x.Anio == anio &&
                         x.Mes == mes &&
-                        x.FechaInicio == fechaInicio &&
-                        x.FechaFin == fechaFin &&
                         x.Semana == semana &&
                         x.TipoSaldo == tipoSaldo &&
                         x.Tipo == tipo,
@@ -146,7 +125,7 @@ namespace Coopad.Administration.Api.Repositories
 
 
 
-        public async Task<List<CashFlowValues>> GetCashFlowValuesSP(decimal proyeccion_dp, decimal proyeccion_pf, decimal proyeccion_spi, decimal proyeccion_socios, decimal proyeccion_pa, string tipo, string fecha_inicio, string fecha_fin)
+        public  async Task<List<CashFlowValues>> GetCashFlowValuesSP(decimal proyeccion_dp, decimal proyeccion_pf, decimal proyeccion_spi, decimal proyeccion_socios, decimal proyeccion_pa, string tipo, string fecha_inicio, string fecha_fin)
         {
 
 
@@ -192,6 +171,90 @@ namespace Coopad.Administration.Api.Repositories
 
 
            return result;
+
+        }
+
+
+
+        public async Task CreateDateAsync(
+            List<CreateCashFlowDateRequest> request, 
+            CancellationToken cancellationToken = default)
+        {
+            foreach (var item in request)
+            {
+                FechasRango? fecha;
+
+                if (item.Id.HasValue)
+                {
+                    fecha = await _context.FechasRango
+                        .FirstOrDefaultAsync(x => x.Id == item.Id.Value);
+
+                    if (fecha == null)
+                    {
+                        throw new KeyNotFoundException(
+                            $"No existe el registro con Id {item.Id.Value}.");
+                    }
+
+
+                    fecha.Anio = item.Anio;
+                    fecha.Mes = item.Mes;
+                    fecha.FechaInicio = item.FechaInicio;
+                    fecha.FechaFin = item.FechaFin;
+                    fecha.Semana = item.Semana;
+                }
+                else
+                {
+
+                    fecha = new FechasRango
+                    {
+                        Anio = item.Anio,
+                        Mes = item.Mes,
+                        FechaInicio = item.FechaInicio,
+                        FechaFin = item.FechaFin,
+                        Semana = item.Semana
+                    };
+
+                    await _context.FechasRango.AddAsync(fecha);
+                }
+            }
+
+            await _context.SaveChangesAsync(cancellationToken);
+        }
+
+
+        public async Task<List<FechasRango>> GetDatesAsync(
+        int anio,
+        int mes,
+        CancellationToken cancellationToken = default)
+        {
+            var fechas = await _context.FechasRango
+                .Where(x => x.Anio == anio && x.Mes == mes)
+                .ToListAsync(cancellationToken);
+
+            return fechas;
+        }
+
+        public async Task<FechasCashFlow?> GetDatesCoreMovAsync(int anio, int mes, int semana, CancellationToken cancellationToken = default)
+        {
+            var fechas = await _context.FechasRango
+                .Where(x => x.Anio == anio && x.Mes == mes && x.Semana == semana)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (fechas != null) {
+                var fechasObject = new FechasCashFlow
+                {
+
+                    FechaInicio = fechas.FechaInicio,
+                    FechaFin = fechas.FechaFin,
+
+                };
+
+                return fechasObject;
+
+            }
+
+            return null;
+
 
         }
 

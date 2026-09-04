@@ -1,5 +1,6 @@
 ﻿using Coopad.Administration.Api.DTOs.Requests;
 using Coopad.Administration.Api.DTOs.Responses;
+using Coopad.Administration.Api.Models;
 using Coopad.Administration.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -86,41 +87,107 @@ namespace Coopad.Administration.Api.Controllers
 
 
 
-
         [HttpGet]
         public async Task<ActionResult> getCashflow(int anio, int mes, int semana, string tipo)
         {
-
             var projections = await _service.GetAllAsync(anio, mes, semana, tipo);
 
+            var fechas = await _service.GetDatesCoreMovAsync(anio, mes, semana);
 
             var depositosVista = projections
-            .FirstOrDefault(x => x.TipoSaldo == "depositos_vista");
+                .FirstOrDefault(x => x.TipoSaldo == "depositos_vista");
 
             var depositosPf = projections
-            .FirstOrDefault(x => x.TipoSaldo == "depositos_pf");
+                .FirstOrDefault(x => x.TipoSaldo == "depositos_pf");
 
+            var transferenciasSpi = projections
+                .FirstOrDefault(x => x.TipoSaldo == "transferencia_spi");
 
+            var aporteSocios = projections
+                .FirstOrDefault(x => x.TipoSaldo == "aporte_socios");
 
-            Console.WriteLine(depositosVista);
+            var pagoAgil = projections
+                .FirstOrDefault(x => x.TipoSaldo == "pago_agil");
 
+            var proyeccion_dp = depositosVista?.Proyeccion ?? 0;
+            var proyeccion_pf = depositosPf?.Proyeccion ?? 0;
+            var proyeccion_spi = transferenciasSpi?.Proyeccion ?? 0;
+            var proyeccion_socios = aporteSocios?.Proyeccion ?? 0;
+            var proyeccion_pa = pagoAgil?.Proyeccion ?? 0;
 
+            var fecha_inicio = fechas?.FechaInicio?
+                .ToString("MM/dd/yyyy") ?? "01/01/1900";
 
-            var proyeccion_dp = depositosVista.Proyeccion;
-            var proyeccion_pf = depositosPf.Proyeccion;
-            var proyeccion_spi = 300000;
-            var proyeccion_socios = 500000;
-            var proyeccion_pa = 250000;
-            var fecha_inicio = depositosVista.FechaInicio.ToString("MM/dd/yyyy");
-            var fecha_fin = depositosVista.FechaFin.ToString("MM/dd/yyyy");
+            var fecha_fin = fechas?.FechaFin?
+                .ToString("MM/dd/yyyy") ?? "01/01/1900";
 
-
-
-            var cash_flow_async  = await _service.GetCashFlowSp(proyeccion_dp, proyeccion_pf, proyeccion_spi, proyeccion_socios, proyeccion_pa, tipo, fecha_inicio, fecha_fin);
-
+            var cash_flow_async = await _service.GetCashFlowSp(
+                proyeccion_dp,
+                proyeccion_pf,
+                proyeccion_spi,
+                proyeccion_socios,
+                proyeccion_pa,
+                tipo,
+                fecha_inicio,
+                fecha_fin
+            );
 
             return Ok(cash_flow_async);
         }
+
+
+
+
+
+        [HttpPost("createDates")]
+        public async Task<IActionResult> Create(
+         [FromBody] List<CreateCashFlowDateRequest> request)
+        {
+            await _service.CreateDateAsync(request);
+
+            return Ok();
+        }
+
+
+
+        [HttpGet("ListFechas")]
+        public async Task<IActionResult> GetDates(
+        [FromQuery] int anio,
+        [FromQuery] int mes,
+        CancellationToken cancellationToken)
+        {
+            var result = await _service.GetDatesAsync(
+                anio,
+                mes,
+                cancellationToken);
+
+            return Ok(result);
+        }
+
+
+
+
+
+        [HttpGet("ListCashFlowRegister")]
+        public async Task<IActionResult> Get(
+        [FromQuery] int anio,
+        [FromQuery] int mes,
+        [FromQuery] int semana,
+        [FromQuery] string tipoSaldo,
+        [FromQuery] string tipo,
+        CancellationToken cancellationToken)
+        {
+            var result = await _service.GetAsync(
+                anio,
+                mes,
+                semana,
+                tipoSaldo,
+                tipo,
+                cancellationToken);
+
+            return Ok(result);
+        }
+
 
     }
 }

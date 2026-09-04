@@ -2,6 +2,7 @@
 {
     public class CreateCashFlowProjectionRequest
     {
+        public int? Id { get; set; }
         public int Anio { get; set; } 
         public int Mes { get; set; }
         public DateTime FechaInicio { get; set; }

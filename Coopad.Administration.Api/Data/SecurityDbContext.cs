@@ -23,6 +23,8 @@ namespace Coopad.Administration.Api.Data
 
         public DbSet<CashFlowProjection> CashFlowProjections => Set<CashFlowProjection>();
 
+        public DbSet<FechasRango> FechasRango => Set<FechasRango>();
+
         protected override void OnModelCreating(
             ModelBuilder modelBuilder)
         {
@@ -177,13 +179,6 @@ namespace Coopad.Administration.Api.Data
                 entity.Property(x => x.Mes)
                     .IsRequired();
 
-                entity.Property(x => x.FechaInicio)
-                    .HasColumnType("date")
-                    .IsRequired();
-
-                entity.Property(x => x.FechaFin)
-                    .HasColumnType("date")
-                    .IsRequired();
 
                 entity.Property(x => x.Semana)
                     .IsRequired();
@@ -205,6 +200,34 @@ namespace Coopad.Administration.Api.Data
                     .IsRequired();
 
                 entity.Property(x => x.UpdatedAt);
+            });
+
+
+            modelBuilder.Entity<FechasRango>(entity =>
+            {
+
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Id)
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(x => x.Anio)
+                    .IsRequired();
+
+                entity.Property(x => x.Mes)
+                    .IsRequired();
+
+
+                entity.Property(x => x.Semana)
+                    .IsRequired();
+
+                entity.Property(x => x.FechaInicio)
+                 .HasColumnType("date")
+                 .IsRequired();
+
+                entity.Property(x => x.FechaFin)
+                    .HasColumnType("date")
+                    .IsRequired();
             });
 
 

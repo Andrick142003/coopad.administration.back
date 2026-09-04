@@ -1,5 +1,6 @@
 ﻿using Coopad.Administration.Api.DTOs.Requests;
 using Coopad.Administration.Api.DTOs.Responses;
+using Coopad.Administration.Api.Models;
 
 namespace Coopad.Administration.Api.Services.Interfaces
 {
@@ -41,4 +42,35 @@ namespace Coopad.Administration.Api.Services.Interfaces
             string fecha_inicio,
             string fecha_fin
             );
-    } }
+
+
+        Task CreateDateAsync(List<CreateCashFlowDateRequest> request);
+
+
+
+        Task<List<FechasRango>> GetDatesAsync(
+        int anio,
+        int mes,
+        CancellationToken cancellationToken = default);
+
+
+        Task<CashFlowProjectionResponse?> GetAsync(
+        int anio,
+        int mes,
+        int semana,
+        string tipoSaldo,
+        string tipo,
+        CancellationToken cancellationToken = default);
+
+
+        Task<FechasCashFlow?> GetDatesCoreMovAsync(
+        int anio,
+        int mes,
+        int semana,
+        CancellationToken cancellationToken = default);
+
+
+    }
+
+
+}

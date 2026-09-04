@@ -8,9 +8,9 @@ namespace Coopad.Administration.Api.Services
 {
 
 
-        public class CashFlowProjectionService
-            : ICashFlowProjectionService
-        {
+    public class CashFlowProjectionService
+        : ICashFlowProjectionService
+    {
         private readonly ICashFlowProjectionRepository _repository;
 
         public CashFlowProjectionService(
@@ -63,8 +63,6 @@ namespace Coopad.Administration.Api.Services
             CreateCashFlowProjectionRequest request,
             CancellationToken cancellationToken = default)
         {
-
-
             if (request.FechaInicio > request.FechaFin)
             {
                 throw new ArgumentException(
@@ -77,41 +75,47 @@ namespace Coopad.Administration.Api.Services
                     "La proyección debe ser mayor a cero.");
             }
 
+            if (string.IsNullOrWhiteSpace(request.TipoSaldo))
+            {
+                throw new ArgumentException(
+                    "Debe seleccionar un tipo de saldo.");
+            }
 
+            if (string.IsNullOrWhiteSpace(request.Tipo))
+            {
+                throw new ArgumentException(
+                    "Debe seleccionar un tipo.");
+            }
 
-            var exists = await _repository.ExistsAsync(
+            var projection = await _repository.GetByParametersAsync(
                 request.Anio,
                 request.Mes,
-                request.FechaInicio,
-                request.FechaFin,
                 request.Semana,
                 request.TipoSaldo,
                 request.Tipo,
                 cancellationToken);
 
-            if (exists)
+            if (projection != null)
             {
-                throw new InvalidOperationException(
-                    "Ya existe una proyección para los parámetros seleccionados.");
+                projection.Proyeccion = request.Proyeccion;
+
+                var updated = await _repository.UpdateAsync(
+                    projection,
+                    cancellationToken);
+
+                return MapToResponse(updated);
             }
 
-
-
-            var projection = new CashFlowProjection
+            projection = new CashFlowProjection
             {
                 Anio = request.Anio,
                 Mes = request.Mes,
-                FechaInicio = request.FechaInicio,
-                FechaFin = request.FechaFin,
                 Semana = request.Semana,
                 TipoSaldo = request.TipoSaldo,
                 Tipo = request.Tipo,
                 Proyeccion = request.Proyeccion,
-
                 CreatedAt = DateTime.Now
             };
-
-
 
             var created = await _repository.CreateAsync(
                 projection,
@@ -119,7 +123,6 @@ namespace Coopad.Administration.Api.Services
 
             return MapToResponse(created);
         }
-
 
 
         public async Task<CashFlowProjectionResponse?> UpdateAsync(
@@ -152,8 +155,7 @@ namespace Coopad.Administration.Api.Services
 
             existing.Anio = request.Anio;
             existing.Mes = request.Mes;
-            existing.FechaInicio = request.FechaInicio;
-            existing.FechaFin = request.FechaFin;
+
             existing.Semana = request.Semana;
             existing.TipoSaldo = request.TipoSaldo;
             existing.Tipo = request.Tipo;
@@ -194,8 +196,6 @@ namespace Coopad.Administration.Api.Services
                 Id = projection.Id,
                 Anio = projection.Anio,
                 Mes = projection.Mes,
-                FechaInicio = projection.FechaInicio,
-                FechaFin = projection.FechaFin,
                 Semana = projection.Semana,
                 TipoSaldo = projection.TipoSaldo,
                 Tipo = projection.Tipo,
@@ -206,13 +206,95 @@ namespace Coopad.Administration.Api.Services
 
 
 
-        public async Task<List<CashFlowValues>>GetCashFlowSp(decimal proyeccion_dp, decimal proyeccion_pf, decimal proyeccion_spi, decimal proyeccion_socios, decimal proyeccion_pa, string tipo, string fecha_inicio, string fecha_fin)
+        public async Task<List<CashFlowValues>> GetCashFlowSp(
+            decimal proyeccion_dp,
+            decimal proyeccion_pf,
+            decimal proyeccion_spi,
+            decimal proyeccion_socios,
+            decimal proyeccion_pa,
+            string tipo,
+            string fecha_inicio,
+            string fecha_fin)
         {
             var cashFlowValues = await _repository.GetCashFlowValuesSP(proyeccion_dp, proyeccion_pf, proyeccion_spi, proyeccion_socios, proyeccion_pa, tipo, fecha_inicio, fecha_fin);
-           
+
             return cashFlowValues;
 
         }
 
+
+        public async Task CreateDateAsync(
+        List<CreateCashFlowDateRequest> request)
+        {
+            if (request == null || request.Count == 0)
+            {
+                throw new ArgumentException(
+                    "Debe existir al menos una semana.");
+            }
+
+            if (request.Count != 4)
+            {
+                throw new ArgumentException(
+                    "Debe enviar las cuatro semanas.");
+            }
+
+            await _repository.CreateDateAsync(request);
+        }
+
+
+
+        public async Task<List<FechasRango>> GetDatesAsync(
+        int anio,
+        int mes,
+        CancellationToken cancellationToken = default)
+        {
+            return await _repository.GetDatesAsync(
+                anio,
+                mes,
+                cancellationToken);
+
+
+        }
+
+        public async Task<CashFlowProjectionResponse?> GetAsync(
+        int anio,
+        int mes,
+        int semana,
+        string tipoSaldo,
+        string tipo,
+        CancellationToken cancellationToken = default)
+        {
+            var projection = await _repository.GetByParametersAsync(
+                anio,
+                mes,
+                semana,
+                tipoSaldo,
+                tipo,
+                cancellationToken);
+
+            if (projection == null)
+            {
+                return null;
+            }
+
+            return MapToResponse(projection);
+        }
+
+
+
+        public async Task<FechasCashFlow?> GetDatesCoreMovAsync(
+        int anio,
+        int mes,
+        int semana,
+        CancellationToken cancellationToken = default)
+        {
+            return await _repository.GetDatesCoreMovAsync(
+                anio,
+                mes,
+                semana,
+                cancellationToken);
+
+
+        }
     }
 }
