@@ -109,11 +109,43 @@ namespace Coopad.Administration.Api.Controllers
             var pagoAgil = projections
                 .FirstOrDefault(x => x.TipoSaldo == "pago_agil");
 
+            var cancelacion_inversiones = projections
+                .FirstOrDefault(x => x.TipoSaldo == "cancelacion_inversiones");
+
+            var prestamos_externos = projections
+                .FirstOrDefault(x => x.TipoSaldo == "prestamos_externos");
+
+
+            var activacion_inversiones = projections
+                .FirstOrDefault(x => x.TipoSaldo == "activacion_inversiones");
+
+            var pagos_credito = projections
+                .FirstOrDefault(x => x.TipoSaldo == "pagos_credito");
+
+
+
+
+
             var proyeccion_dp = depositosVista?.Proyeccion ?? 0;
             var proyeccion_pf = depositosPf?.Proyeccion ?? 0;
             var proyeccion_spi = transferenciasSpi?.Proyeccion ?? 0;
             var proyeccion_socios = aporteSocios?.Proyeccion ?? 0;
             var proyeccion_pa = pagoAgil?.Proyeccion ?? 0;
+
+            var proyeccion_cancelacion_inversiones = cancelacion_inversiones?.Proyeccion ?? 0;
+            var proyeccion_prestamos_externos = prestamos_externos?.Proyeccion ?? 0;
+            var proyeccion_activasion_inversiones = activacion_inversiones?.Proyeccion ?? 0;
+            var proyeccion_pagos_credito = pagos_credito?.Proyeccion ?? 0;
+
+
+
+            var saldo_cancelacion_inversiones = cancelacion_inversiones?.SaldoActual ?? 0;
+            var saldo_prestamos_externos = prestamos_externos?.SaldoActual ?? 0;
+            var saldo_activasion_inversiones = activacion_inversiones?.SaldoActual ?? 0;
+            var saldo_pagos_credito = pagos_credito?.SaldoActual ?? 0;
+
+
+
 
             var fecha_inicio = fechas?.FechaInicio?
                 .ToString("MM/dd/yyyy") ?? "01/01/1900";
@@ -127,6 +159,14 @@ namespace Coopad.Administration.Api.Controllers
                 proyeccion_spi,
                 proyeccion_socios,
                 proyeccion_pa,
+                proyeccion_cancelacion_inversiones,
+                proyeccion_prestamos_externos,
+                proyeccion_activasion_inversiones,
+                proyeccion_pagos_credito,
+                saldo_cancelacion_inversiones,
+                saldo_prestamos_externos,
+                saldo_activasion_inversiones,
+                saldo_pagos_credito,
                 tipo,
                 fecha_inicio,
                 fecha_fin

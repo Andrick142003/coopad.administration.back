@@ -12,9 +12,13 @@ namespace Coopad.Administration.Api.Services.Interfaces
 
         Task<User> CreateUserAsync(User user);
 
-        Task<LoginResponse?> LoginAsync(
+        Task<LoginResult?> LoginAsync(
             string username,
             string password);
+
+
+        Task<UserDetailsDto?> GetCurrentUserAsync(
+        string username);
 
 
 

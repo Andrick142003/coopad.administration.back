@@ -16,9 +16,8 @@
 
         public decimal? Proyeccion { get; set; }
 
-        public decimal SaldoEjecutado { get; set; }
+        public decimal? SaldoActual { get; set; }
 
-        public decimal VariacionPorcentual { get; set; }
 
     }
 }

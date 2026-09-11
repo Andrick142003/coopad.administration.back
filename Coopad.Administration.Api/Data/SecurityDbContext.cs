@@ -195,6 +195,11 @@ namespace Coopad.Administration.Api.Data
                     .HasColumnType("decimal(18,2)")
                     .IsRequired();
 
+
+                entity.Property(x => x.SaldoActual)
+                    .HasColumnType("decimal(18,2)");
+                    
+
                 entity.Property(x => x.CreatedAt)
                     .HasDefaultValueSql("SYSDATETIME()")
                     .IsRequired();

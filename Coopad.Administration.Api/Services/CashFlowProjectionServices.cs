@@ -95,13 +95,22 @@ namespace Coopad.Administration.Api.Services
                 request.Tipo,
                 cancellationToken);
 
+
+            
+
             if (projection != null)
             {
                 projection.Proyeccion = request.Proyeccion;
+                projection.SaldoActual = request.SaldoActual;
 
                 var updated = await _repository.UpdateAsync(
                     projection,
                     cancellationToken);
+
+
+
+
+
 
                 return MapToResponse(updated);
             }
@@ -114,6 +123,7 @@ namespace Coopad.Administration.Api.Services
                 TipoSaldo = request.TipoSaldo,
                 Tipo = request.Tipo,
                 Proyeccion = request.Proyeccion,
+                SaldoActual = request.SaldoActual,
                 CreatedAt = DateTime.Now
             };
 
@@ -200,6 +210,7 @@ namespace Coopad.Administration.Api.Services
                 TipoSaldo = projection.TipoSaldo,
                 Tipo = projection.Tipo,
                 Proyeccion = projection.Proyeccion,
+                SaldoActual = projection.SaldoActual    
 
             };
         }
@@ -212,11 +223,35 @@ namespace Coopad.Administration.Api.Services
             decimal proyeccion_spi,
             decimal proyeccion_socios,
             decimal proyeccion_pa,
+            decimal proyeccion_cancelacion_inversiones,
+            decimal proyeccion_prestamos_externos,
+            decimal proyeccion_activacion_inversiones,
+            decimal proyeccion_pagos_credito,
+            decimal saldo_cancelacion_inversiones,
+            decimal saldo_prestamos_externos,
+            decimal saldo_activacion_inversiones,
+            decimal saldo_pagos_credito,
             string tipo,
             string fecha_inicio,
             string fecha_fin)
         {
-            var cashFlowValues = await _repository.GetCashFlowValuesSP(proyeccion_dp, proyeccion_pf, proyeccion_spi, proyeccion_socios, proyeccion_pa, tipo, fecha_inicio, fecha_fin);
+            var cashFlowValues = await _repository.GetCashFlowValuesSP(
+                proyeccion_dp, 
+                proyeccion_pf, 
+                proyeccion_spi, 
+                proyeccion_socios, 
+                proyeccion_pa,
+                proyeccion_cancelacion_inversiones,
+                proyeccion_prestamos_externos,
+                proyeccion_activacion_inversiones,
+                proyeccion_pagos_credito,
+                saldo_cancelacion_inversiones,
+                saldo_prestamos_externos,
+                saldo_activacion_inversiones,
+                saldo_pagos_credito,
+                tipo, 
+                fecha_inicio, 
+                fecha_fin);
 
             return cashFlowValues;
 

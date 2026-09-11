@@ -25,6 +25,7 @@ namespace Coopad.Administration.Api.Repositories.Interfaces
             CashFlowProjection projection,
             CancellationToken cancellationToken = default);
 
+
         Task<bool> DeleteAsync(
             int id,
             CancellationToken cancellationToken = default);
@@ -37,6 +38,8 @@ namespace Coopad.Administration.Api.Repositories.Interfaces
         string tipo,
         CancellationToken cancellationToken = default);
 
+
+
         Task<List<CashFlowValues>> GetCashFlowValuesSP
             (
             decimal proyeccion_dp, 
@@ -44,6 +47,14 @@ namespace Coopad.Administration.Api.Repositories.Interfaces
             decimal proyeccion_spi,
             decimal proyeccion_socios, 
             decimal proyeccion_pa,
+            decimal proyeccion_cancelacion_inversiones,
+            decimal proyeccion_prestamos_externos,
+            decimal proyeccion_activacion_inversiones,
+            decimal proyeccion_pagos_credito,
+            decimal saldo_cancelacion_inversiones,
+            decimal saldo_prestamos_externos,
+            decimal saldo_activacion_inversiones,
+            decimal saldo_pagos_credito,
             string tipo,
             string fecha_inicio,
             string fecha_fin

@@ -10,6 +10,12 @@
         public int Semana { get; set; } 
         public string TipoSaldo { get; set; } = string.Empty;
         public string Tipo { get; set; } = string.Empty; 
-        public decimal Proyeccion { get; set; } }
+        public decimal Proyeccion { get; set; }
+        public decimal? SaldoActual { get; set;  }
+    
+    
+    
+    }
+
     
 }

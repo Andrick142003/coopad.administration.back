@@ -48,6 +48,9 @@ namespace Coopad.Administration.Api.Migrations
                         .IsRequired()
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<decimal?>("SaldoActual")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int?>("Semana")
                         .IsRequired()
                         .HasColumnType("int");

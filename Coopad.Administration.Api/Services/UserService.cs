@@ -95,7 +95,7 @@ namespace Coopad.Administration.Api.Services
             }
         }
 
-        public async Task<LoginResponse?> LoginAsync(
+        public async Task<LoginResult?> LoginAsync(
             string username,
             string password)
         {
@@ -165,7 +165,7 @@ namespace Coopad.Administration.Api.Services
 
             var token = _jwtService.GenerateToken(user);
 
-            return new LoginResponse
+            return new LoginResult
             {
                 Token = token,
 
@@ -192,5 +192,48 @@ namespace Coopad.Administration.Api.Services
                 }
             };
         }
+
+
+
+        public async Task<UserDetailsDto?> GetCurrentUserAsync(
+        string username)
+        {
+            var user = await _userRepository
+                .GetByUsernameAsync(username);
+
+            if (user is null)
+            {
+                return null;
+            }
+
+            if (!user.IsActive)
+            {
+                return null;
+            }
+
+            return new UserDetailsDto
+            {
+                Id = user.Id,
+                Username = user.Username,
+                DisplayName = user.DisplayName,
+                Email = user.Email,
+
+                Roles = user.UserRoles
+                    .Where(x => x.Role.IsActive)
+                    .Select(x => x.Role.Name)
+                    .Distinct()
+                    .ToList(),
+
+                Permissions = user.UserRoles
+                    .Where(x => x.Role.IsActive)
+                    .SelectMany(x => x.Role.RolePermissions)
+                    .Where(x => x.Permission.IsActive)
+                    .Select(x => x.Permission.Name)
+                    .Distinct()
+                    .ToList()
+            };
+        }
+
+
     }
 }

@@ -36,6 +36,30 @@
         }
       }
     },
+    "/api/Auth/me": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/logout": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/CashFlowProjection/{id}": {
       "get": {
         "tags": [
@@ -495,13 +519,10 @@
             "format": "double",
             "nullable": true
           },
-          "saldoEjecutado": {
+          "saldoActual": {
             "type": "number",
-            "format": "double"
-          },
-          "variacionPorcentual": {
-            "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -576,6 +597,11 @@
           "proyeccion": {
             "type": "number",
             "format": "double"
+          },
+          "saldoActual": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           }
         },
         "additionalProperties": false

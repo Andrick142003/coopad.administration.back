@@ -2,7 +2,6 @@
 {
     public class LoginResponse
     {
-        public string Token { get; set; } = null!;
 
         public UserDetailsDto User { get; set; } = null!;
     }

@@ -1,5 +1,6 @@
 using Coopad.Administration.Api.Authorization;
 using Coopad.Administration.Api.Configuration;
+using Coopad.Administration.Api.Constants;
 using Coopad.Administration.Api.Data;
 using Coopad.Administration.Api.Infrastructure.ActiveDirectory;
 using Coopad.Administration.Api.Infrastructure.Database;
@@ -36,18 +37,17 @@ builder.Services.AddSingleton<IAseConnectionFactory, AseConnectionFactory>();
 
 builder.Services.AddControllers();
 
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend", policy =>
     {
         policy
-            .WithOrigins("http://localhost:5173")
+            .WithOrigins("http://192.168.100.188:5173")
             .AllowAnyHeader()
-            .AllowAnyMethod();
+            .AllowAnyMethod()
+            .AllowCredentials();
     });
 });
-
 
 
 
@@ -101,6 +101,18 @@ builder.Services
                         Encoding.UTF8.GetBytes(
                             jwtSettings.Key))
             };
+
+        options.Events = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
+            {
+                context.Token =
+                    context.Request.Cookies[
+                        AuthConstants.AccessTokenCookie];
+
+                return Task.CompletedTask;
+            }
+        };
     });
 
 builder.Services.AddAuthorization();

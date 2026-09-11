@@ -9,6 +9,8 @@
         public string? TipoSaldo { get; set; } = string.Empty; 
         public string? Tipo { get; set; } = string.Empty;
         public decimal? Proyeccion { get; set; }
+
+        public decimal? SaldoActual { get; set; }
         public DateTime? CreatedAt { get; set; } 
         public DateTime? UpdatedAt { get; set; } }
 }

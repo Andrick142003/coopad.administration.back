@@ -82,6 +82,8 @@ namespace Coopad.Administration.Api.Repositories
         }
 
 
+
+
         public async Task<bool> DeleteAsync(
             int id,
             CancellationToken cancellationToken = default)
@@ -125,7 +127,26 @@ namespace Coopad.Administration.Api.Repositories
 
 
 
-        public  async Task<List<CashFlowValues>> GetCashFlowValuesSP(decimal proyeccion_dp, decimal proyeccion_pf, decimal proyeccion_spi, decimal proyeccion_socios, decimal proyeccion_pa, string tipo, string fecha_inicio, string fecha_fin)
+
+
+
+        public  async Task<List<CashFlowValues>> GetCashFlowValuesSP(
+            decimal proyeccion_dp, 
+            decimal proyeccion_pf, 
+            decimal proyeccion_spi, 
+            decimal proyeccion_socios, 
+            decimal proyeccion_pa,
+            decimal proyeccion_cancelacion_inversiones,
+            decimal proyeccion_prestamos_externos,
+            decimal proyeccion_activacion_inversiones,
+            decimal proyeccion_pagos_credito,
+            decimal saldo_cancelacion_inversiones,
+            decimal saldo_prestamos_externos,
+            decimal saldo_activacion_inversiones,
+            decimal saldo_pagos_credito,
+            string tipo,
+            string fecha_inicio,
+            string fecha_fin)
         {
 
 
@@ -147,6 +168,20 @@ namespace Coopad.Administration.Api.Repositories
             command.Parameters.Add(new AseParameter("@i_planificado_spi", proyeccion_spi));
             command.Parameters.Add(new AseParameter("@i_planificado_socios", proyeccion_socios));
             command.Parameters.Add(new AseParameter("@i_planificado_pa", proyeccion_pa));
+
+            command.Parameters.Add(new AseParameter("@i_planificado_ci", proyeccion_cancelacion_inversiones));
+            command.Parameters.Add(new AseParameter("@i_planificado_pe", proyeccion_prestamos_externos));
+            command.Parameters.Add(new AseParameter("@i_planificado_ai", proyeccion_activacion_inversiones));
+            command.Parameters.Add(new AseParameter("@i_planificado_pc", proyeccion_pagos_credito));
+
+
+            command.Parameters.Add(new AseParameter("@i_saldo_ci", saldo_cancelacion_inversiones));
+            command.Parameters.Add(new AseParameter("@i_saldo_pe", saldo_prestamos_externos));
+            command.Parameters.Add(new AseParameter("@i_saldo_ai", saldo_activacion_inversiones));
+            command.Parameters.Add(new AseParameter("@i_saldo_pc", saldo_pagos_credito));
+
+
+
             command.Parameters.Add(new AseParameter("@i_fecha_ini", fecha_inicio));
             command.Parameters.Add(new AseParameter("@i_fecha_fin", fecha_fin));
 
