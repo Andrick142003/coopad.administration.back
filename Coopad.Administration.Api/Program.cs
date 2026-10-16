@@ -19,6 +19,12 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
+
+var config = builder.Configuration;
+
+
 builder.Services.Configure<AseConnectionSettings>(
     builder.Configuration.GetSection("AseConnection"));
 
@@ -37,17 +43,22 @@ builder.Services.AddSingleton<IAseConnectionFactory, AseConnectionFactory>();
 
 builder.Services.AddControllers();
 
+
+
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend", policy =>
     {
         policy
-            .WithOrigins("http://192.168.100.188:5173")
+            .WithOrigins("http://150.150.10.120:8086")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
     });
 });
+
+
 
 
 
