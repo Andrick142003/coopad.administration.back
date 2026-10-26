@@ -415,6 +415,100 @@
         }
       }
     },
+    "/api/sorteo/numeros": {
+      "get": {
+        "tags": [
+          "Sorteo"
+        ],
+        "parameters": [
+          {
+            "name": "tipo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/sorteo/numeros/{id}/estado": {
+      "patch": {
+        "tags": [
+          "Sorteo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActualizarEstadoRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActualizarEstadoRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActualizarEstadoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/sorteo/realizar": {
+      "post": {
+        "tags": [
+          "Sorteo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RealizarSorteoRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RealizarSorteoRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RealizarSorteoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Users/{username}": {
       "get": {
         "tags": [
@@ -483,6 +577,15 @@
   },
   "components": {
     "schemas": {
+      "ActualizarEstadoRequest": {
+        "type": "object",
+        "properties": {
+          "estado": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "CashFlowProjectionResponse": {
         "type": "object",
         "properties": {
@@ -647,6 +750,16 @@
           "password": {
             "minLength": 1,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealizarSorteoRequest": {
+        "type": "object",
+        "properties": {
+          "tipo": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

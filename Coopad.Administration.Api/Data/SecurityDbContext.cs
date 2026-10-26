@@ -24,6 +24,8 @@ namespace Coopad.Administration.Api.Data
         public DbSet<CashFlowProjection> CashFlowProjections => Set<CashFlowProjection>();
 
         public DbSet<FechasRango> FechasRango => Set<FechasRango>();
+  
+        public DbSet<SorteoNumero> SorteoNumeros => Set<SorteoNumero>();
 
         protected override void OnModelCreating(
             ModelBuilder modelBuilder)
@@ -233,6 +235,30 @@ namespace Coopad.Administration.Api.Data
                 entity.Property(x => x.FechaFin)
                     .HasColumnType("date")
                     .IsRequired();
+            });
+
+
+
+
+            modelBuilder.Entity<SorteoNumero>(entity =>
+            {
+                entity.ToTable("SorteoNumeros", "dbo");
+
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Numero)
+                    .IsRequired();
+
+                entity.Property(x => x.Tipo)
+                    .HasColumnType("char(1)")
+                    .IsRequired();
+
+                entity.Property(x => x.Estado)
+                    .HasColumnType("bit")
+                    .IsRequired();
+
+                entity.HasIndex(x => x.Numero)
+                    .IsUnique();
             });
 
 

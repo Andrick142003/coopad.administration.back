@@ -1,4 +1,4 @@
-﻿namespace Coopad.Administration.Api.DTOs.Requests
+﻿namespace Coopad.Administration.Api.DTOs.Responses
 {
     public class UpdateCashFlowProjectionRequest
     {

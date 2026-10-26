@@ -144,7 +144,6 @@ C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administr
 C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administration.Api\obj\Release\net8.0\staticwebassets.build.json.cache
 C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administration.Api\obj\Release\net8.0\staticwebassets.development.json
 C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administration.Api\obj\Release\net8.0\staticwebassets.build.endpoints.json
-C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administration.Api\obj\Release\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administration.Api\obj\Release\net8.0\Coopad.A.E2B6F141.Up2Date
 C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administration.Api\obj\Release\net8.0\Coopad.Administration.Api.dll
 C:\Users\aquirolam\Desktop\DesarrollosWeb\Coopad.Administration\Coopad.Administration.Api\obj\Release\net8.0\refint\Coopad.Administration.Api.dll

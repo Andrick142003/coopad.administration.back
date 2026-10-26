@@ -20,7 +20,5 @@ namespace Coopad.Administration.Api.Services.Interfaces
         Task<UserDetailsDto?> GetCurrentUserAsync(
         string username);
 
-
-
     }
 }

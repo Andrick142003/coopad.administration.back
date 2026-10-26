@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Coopad.Administration.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b31cb272a04f96fe9e07d2523e7a67a3a8641be6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b63b362fd6295e1841fb23b7fe8126d079961772")]
 [assembly: System.Reflection.AssemblyProductAttribute("Coopad.Administration.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Coopad.Administration.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

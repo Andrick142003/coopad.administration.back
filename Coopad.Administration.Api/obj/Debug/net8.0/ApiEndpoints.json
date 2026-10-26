@@ -133,7 +133,7 @@
       },
       {
         "Name": "request",
-        "Type": "Coopad.Administration.Api.DTOs.Requests.UpdateCashFlowProjectionRequest",
+        "Type": "Coopad.Administration.Api.DTOs.Responses.UpdateCashFlowProjectionRequest",
         "IsRequired": true
       }
     ],
@@ -256,6 +256,59 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coopad.Administration.Api.Controllers.SorteoController",
+    "Method": "ObtenerNumeros",
+    "RelativePath": "api/sorteo/numeros",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coopad.Administration.Api.Controllers.SorteoController",
+    "Method": "ActualizarEstado",
+    "RelativePath": "api/sorteo/numeros/{id}/estado",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Coopad.Administration.Api.Controllers.ActualizarEstadoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coopad.Administration.Api.Controllers.SorteoController",
+    "Method": "RealizarSorteo",
+    "RelativePath": "api/sorteo/realizar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Coopad.Administration.Api.Controllers.RealizarSorteoRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

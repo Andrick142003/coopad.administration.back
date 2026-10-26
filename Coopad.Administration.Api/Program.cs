@@ -51,7 +51,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("Frontend", policy =>
     {
         policy
-            .WithOrigins("http://150.150.10.120:8086")
+            .WithOrigins("http://192.168.100.188:5173")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
@@ -73,6 +73,8 @@ builder.Services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHand
 builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
 builder.Services.AddScoped<ICashFlowProjectionRepository, CashFlowProjectionRepository>();
 builder.Services.AddScoped<ICashFlowProjectionService, CashFlowProjectionService>();
+builder.Services.AddScoped<ISorteoRepository, SorteoRepository>();
+builder.Services.AddScoped<ISorteoService, SorteoService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
